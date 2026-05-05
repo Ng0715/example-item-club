@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iTech Club</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+nav h1 {
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.hero-text h2 {
+  font-size: 60px;
+}
+
+.hero-text span {
+  color: #3b82f6;
+}
+
+.hero-text p {
+  margin: 20px 0;
+  color: #94a3b8;
+}
+
+/* 🔥 你的名字（发光） */
+.name {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #38bdf8;
+  text-shadow: 0 0 10px #38bdf8, 0 0 20px #3b82f6;
+}
+
+.role {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg, #3b82f6, #6366f1);
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SECTION */
+section {
+  padding: 80px 10%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 20px rgba(59,130,246,0.5);
+}
+
+/* TEAM */
+.team img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h1>&lt;/&gt; iTech Club</h1>
+</nav>
+
+<div class="hero">
+  <div class="hero-text">
+    <h2>Build. Code.<br><span>Innovate.</span></h2>
+    <p>We create, learn and innovate through technology.</p>
+
+    <!-- 🔥 你的名字 -->
+    <div class="name">Shi Le Ng</div>
+    <div class="role">iTech Club Leader</div>
+
+    <a href="#join" class="btn">Join Us</a>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>We are a passionate IT club focusing on coding, projects and innovation.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🌐 Website</h3>
+      <p>Club official website project.</p>
+    </div>
+    <div class="card">
+      <h3>🤖 AI</h3>
+      <p>Building smart AI tools.</p>
+    </div>
+    <div class="card">
+      <h3>📱 App</h3>
+      <p>Mobile app development.</p>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <h2>Our Team</h2>
+  <div class="grid team">
+    <div class="card">
+      <img src="https://via.placeholder.com/300">
+      <h3>Shi Le Ng</h3>
+      <p>Leader</p>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <h2>Join Us</h2>
+  <p>Be part of our tech journey.</p>
+  <a href="#" class="btn">Apply Now</a>
+</section>
+
+<footer>
+  <p>© 2026 iTech Club</p>
+</footer>
+
+<script>
+window.addEventListener("scroll", () => {
+  document.querySelectorAll("section").forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
